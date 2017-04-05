@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="hn5-SY-dHA">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="v3R-rw-2NK">
+            <objects>
+                <viewController storyboardIdentifier="login" id="hn5-SY-dHA" customClass="LoginViewController" customModule="pinned" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="oba-qF-mmN"/>
+                        <viewControllerLayoutGuide type="bottom" id="bj6-sn-4oK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7nE-bb-TYq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rKb-Yt-aMX">
+                                <rect key="frame" x="61" y="195" width="253" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Pinboard" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ot-QQ-gZe">
+                                <rect key="frame" x="101" y="131" width="173" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JeI-Uv-25o">
+                                <rect key="frame" x="61" y="248" width="253" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gnR-Bp-u5P">
+                                <rect key="frame" x="167" y="306" width="42" height="30"/>
+                                <state key="normal" title="Log in"/>
+                                <connections>
+                                    <action selector="doLogin:" destination="hn5-SY-dHA" eventType="touchUpInside" id="Knr-PD-ogm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iQf-yg-CNC">
+                                <rect key="frame" x="131" y="353" width="115" height="30"/>
+                                <state key="normal" title="Forgot Password"/>
+                                <connections>
+                                    <action selector="doFogetPassword:" destination="hn5-SY-dHA" eventType="touchUpInside" id="0uT-8y-EeD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LpZ-O6-ePo">
+                                <rect key="frame" x="16" y="629" width="73" height="30"/>
+                                <state key="normal" title="1Password"/>
+                                <connections>
+                                    <action selector="do1Password:" destination="hn5-SY-dHA" eventType="touchUpInside" id="Pxd-Hm-paT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="upz-zk-0js">
+                                <rect key="frame" x="290" y="629" width="69" height="30"/>
+                                <state key="normal" title="API Token"/>
+                                <connections>
+                                    <action selector="doAPIToken:" destination="hn5-SY-dHA" eventType="touchUpInside" id="c2h-Gw-jB3"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="iQf-yg-CNC" firstAttribute="top" secondItem="gnR-Bp-u5P" secondAttribute="bottom" constant="17" id="7cd-uO-hZQ"/>
+                            <constraint firstItem="iQf-yg-CNC" firstAttribute="centerX" secondItem="gnR-Bp-u5P" secondAttribute="centerX" id="9jd-zM-me7"/>
+                            <constraint firstItem="upz-zk-0js" firstAttribute="trailing" secondItem="7nE-bb-TYq" secondAttribute="trailingMargin" id="C23-Gg-Caq"/>
+                            <constraint firstItem="JeI-Uv-25o" firstAttribute="top" secondItem="rKb-Yt-aMX" secondAttribute="bottom" constant="23" id="CQm-zz-0b1"/>
+                            <constraint firstItem="2Ot-QQ-gZe" firstAttribute="top" secondItem="oba-qF-mmN" secondAttribute="bottom" constant="111" id="LNr-Gp-f2A"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="2Ot-QQ-gZe" secondAttribute="trailing" constant="85" id="M5F-uQ-suj"/>
+                            <constraint firstItem="rKb-Yt-aMX" firstAttribute="top" secondItem="2Ot-QQ-gZe" secondAttribute="bottom" constant="46" id="N1B-Fb-8CQ"/>
+                            <constraint firstItem="2Ot-QQ-gZe" firstAttribute="leading" secondItem="7nE-bb-TYq" secondAttribute="leadingMargin" constant="85" id="OcJ-5q-aKK"/>
+                            <constraint firstItem="JeI-Uv-25o" firstAttribute="trailing" secondItem="rKb-Yt-aMX" secondAttribute="trailing" id="RSy-3v-XdB"/>
+                            <constraint firstItem="bj6-sn-4oK" firstAttribute="top" secondItem="LpZ-O6-ePo" secondAttribute="bottom" constant="8" id="U1o-zf-ghG"/>
+                            <constraint firstItem="LpZ-O6-ePo" firstAttribute="leading" secondItem="7nE-bb-TYq" secondAttribute="leadingMargin" id="emG-j3-EaD"/>
+                            <constraint firstItem="bj6-sn-4oK" firstAttribute="top" secondItem="upz-zk-0js" secondAttribute="bottom" constant="8" id="eqI-pM-0hR"/>
+                            <constraint firstItem="JeI-Uv-25o" firstAttribute="leading" secondItem="rKb-Yt-aMX" secondAttribute="leading" id="fSg-3H-cN4"/>
+                            <constraint firstItem="rKb-Yt-aMX" firstAttribute="leading" secondItem="7nE-bb-TYq" secondAttribute="leadingMargin" constant="45" id="ia2-I2-HaC"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="rKb-Yt-aMX" secondAttribute="trailing" constant="45" id="imM-Vt-m4p"/>
+                            <constraint firstItem="gnR-Bp-u5P" firstAttribute="top" secondItem="JeI-Uv-25o" secondAttribute="bottom" constant="28" id="pNR-1u-Eoe"/>
+                            <constraint firstItem="gnR-Bp-u5P" firstAttribute="centerX" secondItem="JeI-Uv-25o" secondAttribute="centerX" id="qOx-kw-APb"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="passwordTF" destination="JeI-Uv-25o" id="ugw-nm-KJh"/>
+                        <outlet property="usernameTF" destination="rKb-Yt-aMX" id="YT5-7o-ymC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sQo-nQ-wmP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="50.724637681159422" y="1147.8260869565217"/>
+        </scene>
+    </scenes>
+</document>

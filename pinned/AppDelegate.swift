@@ -16,6 +16,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        if CacheData.cache(key: "username") is String && CacheData.cache(key: "password") is String{
+            
+            let username = CacheData.cache(key: "username") as! String
+            let password = CacheData.cache(key: "password") as! String
+            
+            AFAppDotNetAPIClient.shareAFAppDotNetAPIClient().requestSerializer.setAuthorizationHeaderFieldWithUsername(username, password: password)
+            
+        }else{
+            let loginStoryboard = UIStoryboard.init(name: "Login", bundle: nil)
+            let viewController = loginStoryboard.instantiateViewController(withIdentifier: "login")
+            window?.rootViewController = viewController
+            window?.makeKeyAndVisible()
+        }
         return true
     }
 

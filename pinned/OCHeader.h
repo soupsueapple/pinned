@@ -7,6 +7,7 @@
 //
 
 #import "OnePasswordExtension.h"
+#import <AFNetworking/AFNetworking.h>
 
 #ifndef OCHeader_h
 #define OCHeader_h
