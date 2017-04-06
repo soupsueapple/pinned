@@ -4,4 +4,5 @@ use_frameworks!
 
 target 'pinned' do
 pod 'AFNetworking', '~> 3.0'
+pod 'MJRefresh'
 end

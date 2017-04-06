@@ -23,6 +23,8 @@
 		047486151E94E040004093D3 /* Other.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 047486141E94E040004093D3 /* Other.storyboard */; };
 		047486181E94E11E004093D3 /* AllMainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047486171E94E11E004093D3 /* AllMainTableViewController.swift */; };
 		0474861A1E94E518004093D3 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047486191E94E518004093D3 /* BaseTableViewController.swift */; };
+		04BF10961E9611FC00FEC2C8 /* AllMainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BF10951E9611FC00FEC2C8 /* AllMainTableViewCell.swift */; };
+		04BF10981E963A3E00FEC2C8 /* AllMainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BF10971E963A3E00FEC2C8 /* AllMainCollectionViewCell.swift */; };
 		04EECA5C1E8E24EA00A81CEE /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04EECA5B1E8E24EA00A81CEE /* Login.storyboard */; };
 		04EECA601E8E2D2C00A81CEE /* AFAppDotNetAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EECA5F1E8E2D2C00A81CEE /* AFAppDotNetAPIClient.swift */; };
 		04EECA621E8E3C2500A81CEE /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EECA611E8E3C2500A81CEE /* BaseViewController.swift */; };
@@ -51,6 +53,8 @@
 		047486141E94E040004093D3 /* Other.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Other.storyboard; sourceTree = "<group>"; };
 		047486171E94E11E004093D3 /* AllMainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllMainTableViewController.swift; sourceTree = "<group>"; };
 		047486191E94E518004093D3 /* BaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
+		04BF10951E9611FC00FEC2C8 /* AllMainTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllMainTableViewCell.swift; sourceTree = "<group>"; };
+		04BF10971E963A3E00FEC2C8 /* AllMainCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllMainCollectionViewCell.swift; sourceTree = "<group>"; };
 		04EECA5B1E8E24EA00A81CEE /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		04EECA5F1E8E2D2C00A81CEE /* AFAppDotNetAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AFAppDotNetAPIClient.swift; sourceTree = "<group>"; };
 		04EECA611E8E3C2500A81CEE /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -131,6 +135,8 @@
 			isa = PBXGroup;
 			children = (
 				047486171E94E11E004093D3 /* AllMainTableViewController.swift */,
+				04BF10951E9611FC00FEC2C8 /* AllMainTableViewCell.swift */,
+				04BF10971E963A3E00FEC2C8 /* AllMainCollectionViewCell.swift */,
 			);
 			name = All;
 			sourceTree = "<group>";
@@ -327,12 +333,14 @@
 				043204751E8CF3F6002706B8 /* OnePasswordExtension.m in Sources */,
 				04EECA601E8E2D2C00A81CEE /* AFAppDotNetAPIClient.swift in Sources */,
 				043204601E8CDED3002706B8 /* ViewController.swift in Sources */,
+				04BF10981E963A3E00FEC2C8 /* AllMainCollectionViewCell.swift in Sources */,
 				04EECA671E8E3FA300A81CEE /* StringExtension.swift in Sources */,
 				0432047D1E8E06D1002706B8 /* LoginViewController.swift in Sources */,
 				047486181E94E11E004093D3 /* AllMainTableViewController.swift in Sources */,
 				047486131E94DBEF004093D3 /* MainViewController.swift in Sources */,
 				04EECA621E8E3C2500A81CEE /* BaseViewController.swift in Sources */,
 				0474861A1E94E518004093D3 /* BaseTableViewController.swift in Sources */,
+				04BF10961E9611FC00FEC2C8 /* AllMainTableViewCell.swift in Sources */,
 				0432045E1E8CDED3002706B8 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
