@@ -10,5 +10,5 @@ import UIKit
 
 class AllMainCollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet weak var tag_lb: UILabel!
+    @IBOutlet weak var tag_bt: UIButton!
 }

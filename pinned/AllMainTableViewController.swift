@@ -26,15 +26,29 @@ class AllMainTableViewController: BaseTableViewController {
         
         self.tableView.estimatedRowHeight = 44
         self.tableView.rowHeight = UITableViewAutomaticDimension
+        
+        self.tableView.mj_header = MJRefreshNormalHeader(refreshingBlock: {
+            self.index = 0
+            if self.datas.count > 0{
+                self.datas.removeAll()
+            }
+            self.tableView.reloadData()
+            
+            self.doAllRequest()
+            self.tableView.mj_header.endRefreshing()
+        })
+        
         self.tableView.mj_footer = MJRefreshAutoNormalFooter(refreshingBlock: {
             self.doAllRequest()
             self.tableView.mj_footer.endRefreshing()
         })
         
+        self.tableView.mj_header.beginRefreshing()
         
-        doAllRequest()
+//        self.doAllRequest()
     }
     
+    // MARK: 请求列表数据
     func doAllRequest(){
         let parmaters = ["start": "\(index)", "results": "20"]
         
@@ -96,55 +110,12 @@ class AllMainTableViewController: BaseTableViewController {
             
             let arrTags = tags.components(separatedBy: " ")
             
-            for i in 0 ..< arrTags.count{
-                
-                let tag = arrTags[i]
-                
-                let layout = UICollectionViewFlowLayout()
-                layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
-                layout.itemSize = UICollectionViewFlowLayoutAutomaticSize
-                cell.tags_collectionView.setCollectionViewLayout(layout, animated: false)
-                cell.tags_collectionView.showsHorizontalScrollIndicator = false
-            }
-            
-//            cell.tag_lb.text = tags
-            
-            /*
-            let arrTags = tags.components(separatedBy: " ")
-            
-            for i in 0 ..< arrTags.count{
-                let tag = arrTags[i]
-                
-                if(i == 0){
-                    cell.tag_bt1.setTitle(tag, for: .normal)
-                }else{
-                    let tag_bt_more = UIButton()
-                    tag_bt_more.titleLabel?.font = UIFont.systemFont(ofSize: 15)
-                    tag_bt_more.setTitle(tag, for: .normal)
-                    tag_bt_more.setTitleColor(UIColor.blue, for: .normal)
-                    cell.addSubview(tag_bt_more)
-                    
-                    tag_bt_more.translatesAutoresizingMaskIntoConstraints = false
-                    
-                    let leadingSpaceConsraint = NSLayoutConstraint(item: tag_bt_more, attribute: .leading, relatedBy: .equal, toItem: cell.tag_bt1, attribute: .leading, multiplier: 1, constant: 30)
-                    
-                    let topSpaceConsraint = NSLayoutConstraint(item: tag_bt_more, attribute: .top, relatedBy: .equal, toItem: cell.extended_lb, attribute: .top, multiplier: 1, constant: 30)
-                    
-                    let bottomSpaceConstraint = NSLayoutConstraint(item: tag_bt_more, attribute: .bottom, relatedBy: .equal, toItem: cell, attribute: .bottom, multiplier: 1, constant: 0)
-                    
-                    let constraints = [leadingSpaceConsraint, topSpaceConsraint, bottomSpaceConstraint]
-                    
-                    
-                    cell.addConstraints(constraints)
-                }
-            }
-            */
-            
-            
+            cell.collectionViewDataSourceDelegate(tags: arrTags)
         }
 
         return cell
     }
+    
     
 //    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 //        return 80
