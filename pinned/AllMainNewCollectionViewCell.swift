@@ -12,6 +12,7 @@ class AllMainNewCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var tab_bt: UIButton!
     
+    @IBOutlet weak var tag_lb: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

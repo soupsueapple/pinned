@@ -16,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
         if CacheData.cache(key: "username") is String && CacheData.cache(key: "password") is String{
             
             let username = CacheData.cache(key: "username") as! String

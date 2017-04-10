@@ -1,38 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AllMain" id="gTV-IL-0wX" customClass="AllMainNewCollectionViewCell" customModule="pinned" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="50" height="35"/>
+            <rect key="frame" x="0.0" y="0.0" width="70" height="35"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="50" height="35"/>
+                <rect key="frame" x="0.0" y="0.0" width="70" height="35"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YBb-gF-Gk3">
-                        <rect key="frame" x="0.0" y="10" width="30" height="15"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="tag" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Df8-Y1-X5F">
+                        <rect key="frame" x="0.0" y="7" width="21" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <state key="normal" title="tag"/>
-                    </button>
+                        <color key="textColor" red="0.18617591887641138" green="0.56038889971961536" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="YBb-gF-Gk3" secondAttribute="bottom" constant="10" id="JbB-mA-kP1"/>
-                <constraint firstItem="YBb-gF-Gk3" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="QqR-ro-sKf"/>
-                <constraint firstItem="YBb-gF-Gk3" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="qVS-s4-Wcu"/>
+                <constraint firstItem="Df8-Y1-X5F" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="bCi-cC-Sk0"/>
+                <constraint firstAttribute="bottom" secondItem="Df8-Y1-X5F" secondAttribute="bottom" constant="7" id="jb1-nE-URP"/>
+                <constraint firstItem="Df8-Y1-X5F" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="7" id="vjb-eT-0Xt"/>
             </constraints>
             <connections>
-                <outlet property="tab_bt" destination="YBb-gF-Gk3" id="i9Y-Zz-3AV"/>
+                <outlet property="tag_lb" destination="Df8-Y1-X5F" id="gcC-Fh-Fjv"/>
             </connections>
+            <point key="canvasLocation" x="35" y="54.5"/>
         </collectionViewCell>
     </objects>
 </document>

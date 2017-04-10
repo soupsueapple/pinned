@@ -9,7 +9,7 @@
 import UIKit
 import AFNetworking
 
-class LoginViewController: BaseViewController {
+class LoginViewController: BaseViewController, UITextFieldDelegate{
     
     @IBOutlet weak var usernameTF: UITextField!
     
@@ -26,13 +26,18 @@ class LoginViewController: BaseViewController {
     }
     
     @IBAction func doAPIToken(_ sender: UIButton) {
-        postsUpdate()
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        usernameTF.delegate = self
+        usernameTF.tag = 0;
+        
+        passwordTF.delegate = self
+        passwordTF.tag = 1;
     }
 
     override func didReceiveMemoryWarning() {
@@ -51,6 +56,14 @@ class LoginViewController: BaseViewController {
         AFAppDotNetAPIClient.shareAFAppDotNetAPIClient().loginRequest(username: usernameTF.text, password: passwordTF.text)
         CacheData.saveCache(key: "username", value: usernameTF.text!)
         CacheData.saveCache(key: "password", value: passwordTF.text!)
+        
+        let mainViewController = MainViewController()
+        present(mainViewController, animated: true, completion: {() -> Void in
+        
+            
+            
+        })
+        
     }
     
     func postsUpdate(){
@@ -80,6 +93,20 @@ class LoginViewController: BaseViewController {
             
             
         })
+    }
+    
+    // MARK: TextFieldDelegate
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        if textField.tag == 0{
+            passwordTF.becomeFirstResponder()
+        }else if textField.tag == 1{
+            passwordTF.resignFirstResponder()
+            
+            loginPost()
+        }
+        
+        return true
     }
     
 

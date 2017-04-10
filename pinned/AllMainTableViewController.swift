@@ -8,12 +8,19 @@
 
 import UIKit
 import MJRefresh
+import SafariServices
 
-class AllMainTableViewController: BaseTableViewController {
+class AllMainTableViewController: BaseTableViewController, UISearchBarDelegate, AllMainTableViewCellDelegate{
     
     var datas: Array<Dictionary<String, String>> = []
     
-    var index = 0
+    var allDatas: Array<Dictionary<String, String>> = []
+    
+    var searchDatas: Array<Dictionary<String, String>> = []
+    
+//    var index = 0
+    
+    var searchBar: UISearchBar!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,11 +31,13 @@ class AllMainTableViewController: BaseTableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
+//        self.automaticallyAdjustsScrollViewInsets = false
+        
         self.tableView.estimatedRowHeight = 44
         self.tableView.rowHeight = UITableViewAutomaticDimension
         
         self.tableView.mj_header = MJRefreshNormalHeader(refreshingBlock: {
-            self.index = 0
+            
             if self.datas.count > 0{
                 self.datas.removeAll()
             }
@@ -38,21 +47,27 @@ class AllMainTableViewController: BaseTableViewController {
             self.tableView.mj_header.endRefreshing()
         })
         
-        self.tableView.mj_footer = MJRefreshAutoNormalFooter(refreshingBlock: {
-            self.doAllRequest()
-            self.tableView.mj_footer.endRefreshing()
-        })
+//        self.tableView.mj_footer = MJRefreshAutoNormalFooter(refreshingBlock: {
+//            self.doAllRequest()
+//            self.tableView.mj_footer.endRefreshing()
+//        })
         
         self.tableView.mj_header.beginRefreshing()
         
-//        self.doAllRequest()
+        searchBar = UISearchBar(frame: CGRect.zero)
+        searchBar.showsCancelButton = true
+        searchBar.placeholder = "Search"
+        searchBar.delegate = self
+        searchBar.sizeToFit()
+        
+        self.tableView.tableHeaderView = searchBar
     }
     
     // MARK: 请求列表数据
     func doAllRequest(){
-        let parmaters = ["start": "\(index)", "results": "20"]
+//        let parmaters = ["start": "\(index)", "results": "20"]
         
-        AFAppDotNetAPIClient.shareAFAppDotNetAPIClient().getRequest(url: "posts/all", paramters: parmaters, block: {(json: Any?, error: Error?) -> Void in
+        AFAppDotNetAPIClient.shareAFAppDotNetAPIClient().getRequest(url: "posts/all", paramters: nil, block: {(json: Any?, error: Error?) -> Void in
         
             if AFAppDotNetAPIClient.shareAFAppDotNetAPIClient().httpError(error: error) {
                 self.showAlert(text: error?.localizedDescription)
@@ -65,9 +80,8 @@ class AllMainTableViewController: BaseTableViewController {
             let jsonData = try?JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions(rawValue: UInt(0)))
             
             if let jsonArr: Array = jsonData as? Array<Dictionary<String, String>> {
-//                self.datas = jsonArr
-                self.datas += jsonArr
-                self.index += 20
+                self.allDatas = jsonArr
+                self.datas = self.allDatas
                 
                 self.tableView.reloadData()
             }
@@ -78,6 +92,56 @@ class AllMainTableViewController: BaseTableViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK: UISearchBarDelegate
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchDatas.removeAll()
+        datas = allDatas
+        self.tableView.reloadData()
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        let searchText = searchBar.text!
+        
+        var isResult = false
+        
+        for dic in allDatas{
+            
+            if let description: String = dic["description"]{
+                if description.contains(searchText){
+                    isResult = true
+                }
+            }
+            
+            if let extended: String = dic["extended"]{
+                if extended.contains(searchText){
+                    isResult = true
+                }
+            }
+            
+            if let tags: String = dic["tags"]{
+                if tags.contains(searchText){
+                    isResult = true
+                }
+            }
+            
+            if let href: String = dic["href"]{
+                if href.contains(searchText){
+                    isResult = true
+                }
+            }
+            
+            if isResult{
+                searchDatas.append(dic)
+                datas = searchDatas
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
     }
 
     // MARK: - Table view data source
@@ -95,6 +159,7 @@ class AllMainTableViewController: BaseTableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "AllTableCell", for: indexPath) as! AllMainTableViewCell
+        cell.allMainCellDelegate = self
 
         let dic = self.datas[indexPath.row]
         
@@ -116,6 +181,42 @@ class AllMainTableViewController: BaseTableViewController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false)
+        
+        let dic = self.datas[indexPath.row]
+        
+        if let href: String = dic["href"]{
+            let safariViewController = SFSafariViewController(url: URL(string: href)!)
+            
+//            self.navigationController?.pushViewController(safariViewController, animated: true)
+            
+            present(safariViewController, animated: true, completion: {() -> Void in
+                
+                
+                
+            })
+        }
+    }
+    
+    
+    // MARK: AllMainTableViewCellDelegate
+    
+    func didSelectTag(tag: String!) {
+        searchBar.text = tag
+        
+        for dic in allDatas{
+            if let tags: String = dic["tags"]{
+                if tags.contains(tag){
+                    searchDatas.append(dic)
+                }
+            }
+        }
+        
+        datas = searchDatas
+        self.tableView.reloadData()
+        
+    }
     
 //    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 //        return 80

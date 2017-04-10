@@ -8,11 +8,19 @@
 
 import UIKit
 
+public protocol AllMainTableViewCellDelegate: NSObjectProtocol {
+    
+    func didSelectTag(tag: String!) -> Void
+    
+}
+
 class AllMainTableViewCell: UITableViewCell, UICollectionViewDataSource, UICollectionViewDelegate {
     
     @IBOutlet weak var description_lb: UILabel!
     @IBOutlet weak var extended_lb: UILabel!
     @IBOutlet weak var tags_collectionView: UICollectionView!
+    
+    weak open var allMainCellDelegate: AllMainTableViewCellDelegate?
     
     var tags: Array<String> = []
     
@@ -42,8 +50,9 @@ class AllMainTableViewCell: UITableViewCell, UICollectionViewDataSource, UIColle
         
         let tag = self.tags[indexPath.row]
         
-        cell.tab_bt?.setTitle(tag, for: .normal)
-        
+//        cell.tab_bt?.setTitle(tag, for: .normal)
+//        cell.tab_bt.addTarget(self, action: #selector(AllMainTableViewCell.tagButtonAction), for: .touchUpInside)
+        cell.tag_lb.text = tag
         return cell
     }
     
@@ -59,14 +68,20 @@ class AllMainTableViewCell: UITableViewCell, UICollectionViewDataSource, UIColle
         let layout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         layout.itemSize = CGSize(width: 70, height: 35)
-//        layout.estimatedItemSize = CGSize(width: 70, height: 35)
         layout.scrollDirection = UICollectionViewScrollDirection.horizontal
         
         self.tags_collectionView.setCollectionViewLayout(layout, animated: false)
         self.tags_collectionView.showsHorizontalScrollIndicator = false
         self.tags_collectionView.showsVerticalScrollIndicator = false
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: false)
         
-//        The relevant UICollectionViewFlowLayout instance is <UICollectionViewFlowLayout: 0x7fe5ebd29390>, and it is attached to <UICollectionView: 0x7fe5ec841200; frame = (8 36; 359 40); clipsToBounds = YES; autoresize = RM+BM; gestureRecognizers = <NSArray: 0x608000259bf0>; layer = <CALayer: 0x6080002277a0>; contentOffset: {0, 0}; contentSize: {90, 40}> collection view layout: <UICollectionViewFlowLayout: 0x7fe5ebd29390>.
+        let tag = self.tags[indexPath.row]
+        
+        allMainCellDelegate?.didSelectTag(tag: tag)
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

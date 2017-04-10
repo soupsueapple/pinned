@@ -35,6 +35,8 @@ class AFAppDotNetAPIClient: AFHTTPSessionManager {
    
     func getRequest(url: String!, paramters: Dictionary<String, String>!, block: @escaping (_ responseObject: Any?, _ error: Error?) -> Void){
         
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        
         var p: Dictionary<String, String>! = paramters;
         
         if p != nil {
@@ -47,23 +49,32 @@ class AFAppDotNetAPIClient: AFHTTPSessionManager {
             
             block(json, nil)
             
+            UIApplication.shared.isNetworkActivityIndicatorVisible = false
+            
         }, failure: {(task: URLSessionDataTask?, error: Error?) -> Void in
             
             block(nil, error)
+            
+            UIApplication.shared.isNetworkActivityIndicatorVisible = false
             
         })
     }
     
     func postRequest(url: String!, paramters: Dictionary<String, String>!, block: @escaping (_ responseObject: Any?, _ error: Error?) -> Void){
         
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        
         self.post(url, parameters: paramters, progress: nil, success: {(task: URLSessionDataTask?, json: Any?) -> Void in
             
             block(json, nil)
+            
+            UIApplication.shared.isNetworkActivityIndicatorVisible = false
             
         }, failure: {(task: URLSessionDataTask?, error: Error?) -> Void in
             
             block(nil, error)
             
+            UIApplication.shared.isNetworkActivityIndicatorVisible = false
         })
     }
     
