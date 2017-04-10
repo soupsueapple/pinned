@@ -12,6 +12,8 @@ import SafariServices
 
 class AllMainTableViewController: BaseTableViewController, UISearchBarDelegate, AllMainTableViewCellDelegate{
     
+    let cellIdentily = "AllTableCell"
+    
     var datas: Array<Dictionary<String, String>> = []
     
     var allDatas: Array<Dictionary<String, String>> = []
@@ -21,9 +23,15 @@ class AllMainTableViewController: BaseTableViewController, UISearchBarDelegate, 
 //    var index = 0
     
     var searchBar: UISearchBar!
+    
+    var tag = "";
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if tag.length > 0{
+            self.title = tag
+        }
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -65,9 +73,14 @@ class AllMainTableViewController: BaseTableViewController, UISearchBarDelegate, 
     
     // MARK: 请求列表数据
     func doAllRequest(){
-//        let parmaters = ["start": "\(index)", "results": "20"]
         
-        AFAppDotNetAPIClient.shareAFAppDotNetAPIClient().getRequest(url: "posts/all", paramters: nil, block: {(json: Any?, error: Error?) -> Void in
+        var parmaters: Dictionary<String, String>? = nil
+        
+        if tag.length > 0{
+            parmaters = ["tag": tag]
+        }
+        
+        AFAppDotNetAPIClient.shareAFAppDotNetAPIClient().getRequest(url: "posts/all", paramters: parmaters, block: {(json: Any?, error: Error?) -> Void in
         
             if AFAppDotNetAPIClient.shareAFAppDotNetAPIClient().httpError(error: error) {
                 self.showAlert(text: error?.localizedDescription)
@@ -158,7 +171,7 @@ class AllMainTableViewController: BaseTableViewController, UISearchBarDelegate, 
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "AllTableCell", for: indexPath) as! AllMainTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentily, for: indexPath) as! AllMainTableViewCell
         cell.allMainCellDelegate = self
 
         let dic = self.datas[indexPath.row]
@@ -203,18 +216,18 @@ class AllMainTableViewController: BaseTableViewController, UISearchBarDelegate, 
     // MARK: AllMainTableViewCellDelegate
     
     func didSelectTag(tag: String!) {
-        searchBar.text = tag
-        
-        for dic in allDatas{
-            if let tags: String = dic["tags"]{
-                if tags.contains(tag){
-                    searchDatas.append(dic)
-                }
-            }
-        }
-        
-        datas = searchDatas
-        self.tableView.reloadData()
+//        searchBar.text = tag
+//        
+//        for dic in allDatas{
+//            if let tags: String = dic["tags"]{
+//                if tags.contains(tag){
+//                    searchDatas.append(dic)
+//                }
+//            }
+//        }
+//        
+//        datas = searchDatas
+//        self.tableView.reloadData()
         
     }
     

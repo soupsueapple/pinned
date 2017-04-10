@@ -16,6 +16,10 @@
 		043204751E8CF3F6002706B8 /* OnePasswordExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 043204731E8CF3F6002706B8 /* OnePasswordExtension.m */; };
 		043204781E8DEA77002706B8 /* CacheData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043204771E8DEA77002706B8 /* CacheData.swift */; };
 		0432047D1E8E06D1002706B8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0432047B1E8E06D1002706B8 /* LoginViewController.swift */; };
+		046D41C71E9B744700624E77 /* TagsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046D41C61E9B744700624E77 /* TagsTableViewController.swift */; };
+		046D41CB1E9B751C00624E77 /* TagsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046D41CA1E9B751C00624E77 /* TagsTableViewCell.swift */; };
+		046D41CD1E9B7A7900624E77 /* TagInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046D41CC1E9B7A7900624E77 /* TagInfoTableViewController.swift */; };
+		046D41CF1E9B7B5300624E77 /* TagInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046D41CE1E9B7B5300624E77 /* TagInfoTableViewCell.swift */; };
 		0474860B1E94D78A004093D3 /* All.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0474860A1E94D78A004093D3 /* All.storyboard */; };
 		0474860D1E94D82B004093D3 /* Tags.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0474860C1E94D82B004093D3 /* Tags.storyboard */; };
 		0474860F1E94DB40004093D3 /* Mark.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0474860E1E94DB40004093D3 /* Mark.storyboard */; };
@@ -49,6 +53,10 @@
 		043204731E8CF3F6002706B8 /* OnePasswordExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OnePasswordExtension.m; sourceTree = "<group>"; };
 		043204771E8DEA77002706B8 /* CacheData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheData.swift; sourceTree = "<group>"; };
 		0432047B1E8E06D1002706B8 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		046D41C61E9B744700624E77 /* TagsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagsTableViewController.swift; sourceTree = "<group>"; };
+		046D41CA1E9B751C00624E77 /* TagsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagsTableViewCell.swift; sourceTree = "<group>"; };
+		046D41CC1E9B7A7900624E77 /* TagInfoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagInfoTableViewController.swift; sourceTree = "<group>"; };
+		046D41CE1E9B7B5300624E77 /* TagInfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagInfoTableViewCell.swift; sourceTree = "<group>"; };
 		0474860A1E94D78A004093D3 /* All.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = All.storyboard; sourceTree = "<group>"; };
 		0474860C1E94D82B004093D3 /* Tags.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Tags.storyboard; sourceTree = "<group>"; };
 		0474860E1E94DB40004093D3 /* Mark.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Mark.storyboard; sourceTree = "<group>"; };
@@ -137,15 +145,26 @@
 			name = Utility;
 			sourceTree = "<group>";
 		};
+		046D41C51E9B742300624E77 /* Tags */ = {
+			isa = PBXGroup;
+			children = (
+				046D41C61E9B744700624E77 /* TagsTableViewController.swift */,
+				046D41CA1E9B751C00624E77 /* TagsTableViewCell.swift */,
+				046D41CC1E9B7A7900624E77 /* TagInfoTableViewController.swift */,
+				046D41CE1E9B7B5300624E77 /* TagInfoTableViewCell.swift */,
+			);
+			name = Tags;
+			sourceTree = "<group>";
+		};
 		047486161E94E0F6004093D3 /* All */ = {
 			isa = PBXGroup;
 			children = (
 				047486171E94E11E004093D3 /* AllMainTableViewController.swift */,
 				04BF10951E9611FC00FEC2C8 /* AllMainTableViewCell.swift */,
-				04BF10971E963A3E00FEC2C8 /* AllMainCollectionViewCell.swift */,
-				04BF10991E97242200FEC2C8 /* AllMainUICollectionView.swift */,
 				04BF109B1E9767D700FEC2C8 /* AllMainNewCollectionViewCell.swift */,
 				04BF109C1E9767D700FEC2C8 /* AllMainNewCollectionViewCell.xib */,
+				04BF10971E963A3E00FEC2C8 /* AllMainCollectionViewCell.swift */,
+				04BF10991E97242200FEC2C8 /* AllMainUICollectionView.swift */,
 			);
 			name = All;
 			sourceTree = "<group>";
@@ -166,6 +185,7 @@
 		04EECA5D1E8E24FB00A81CEE /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				046D41C51E9B742300624E77 /* Tags */,
 				047486161E94E0F6004093D3 /* All */,
 				0432047B1E8E06D1002706B8 /* LoginViewController.swift */,
 				04EECA611E8E3C2500A81CEE /* BaseViewController.swift */,
@@ -346,13 +366,17 @@
 				04BF10981E963A3E00FEC2C8 /* AllMainCollectionViewCell.swift in Sources */,
 				04BF109A1E97242200FEC2C8 /* AllMainUICollectionView.swift in Sources */,
 				04EECA671E8E3FA300A81CEE /* StringExtension.swift in Sources */,
+				046D41CF1E9B7B5300624E77 /* TagInfoTableViewCell.swift in Sources */,
 				0432047D1E8E06D1002706B8 /* LoginViewController.swift in Sources */,
 				047486181E94E11E004093D3 /* AllMainTableViewController.swift in Sources */,
 				047486131E94DBEF004093D3 /* MainViewController.swift in Sources */,
+				046D41CD1E9B7A7900624E77 /* TagInfoTableViewController.swift in Sources */,
 				04BF109D1E9767D700FEC2C8 /* AllMainNewCollectionViewCell.swift in Sources */,
 				04EECA621E8E3C2500A81CEE /* BaseViewController.swift in Sources */,
 				0474861A1E94E518004093D3 /* BaseTableViewController.swift in Sources */,
 				04BF10961E9611FC00FEC2C8 /* AllMainTableViewCell.swift in Sources */,
+				046D41C71E9B744700624E77 /* TagsTableViewController.swift in Sources */,
+				046D41CB1E9B751C00624E77 /* TagsTableViewCell.swift in Sources */,
 				0432045E1E8CDED3002706B8 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
