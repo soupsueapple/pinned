@@ -1,0 +1,6 @@
+framework module Pods_pinnedShareExtension {
+  umbrella header "Pods-pinnedShareExtension-umbrella.h"
+
+  export *
+  module * { export * }
+}
