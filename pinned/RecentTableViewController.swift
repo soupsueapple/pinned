@@ -1,8 +1,8 @@
 //
-//  AllMainTableViewController.swift
+//  RecentTableViewController.swift
 //  pinned
 //
-//  Created by 汤坤 on 2017/4/5.
+//  Created by 汤坤 on 2017/4/11.
 //  Copyright © 2017年 Kun Soup. All rights reserved.
 //
 
@@ -10,19 +10,11 @@ import UIKit
 import MJRefresh
 import SafariServices
 
-class AllMainTableViewController: BaseTableViewController, UISearchBarDelegate, AllMainTableViewCellDelegate{
-    
-    let cellIdentily = "AllTableCell"
+class RecentTableViewController: BaseTableViewController, AllMainTableViewCellDelegate {
     
     var datas: Array<Dictionary<String, String>> = []
     
-    var allDatas: Array<Dictionary<String, String>> = []
-    
-    var searchDatas: Array<Dictionary<String, String>> = []
-    
-//    var index = 0
-    
-    var searchBar: UISearchBar!
+    let recentIdentity = "RecentCell"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,8 +24,6 @@ class AllMainTableViewController: BaseTableViewController, UISearchBarDelegate, 
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        
-//        self.automaticallyAdjustsScrollViewInsets = false
         
         self.tableView.estimatedRowHeight = 44
         self.tableView.rowHeight = UITableViewAutomaticDimension
@@ -49,27 +39,14 @@ class AllMainTableViewController: BaseTableViewController, UISearchBarDelegate, 
             self.tableView.mj_header.endRefreshing()
         })
         
-//        self.tableView.mj_footer = MJRefreshAutoNormalFooter(refreshingBlock: {
-//            self.doAllRequest()
-//            self.tableView.mj_footer.endRefreshing()
-//        })
-        
         self.tableView.mj_header.beginRefreshing()
-        
-        searchBar = UISearchBar(frame: CGRect.zero)
-        searchBar.showsCancelButton = true
-        searchBar.placeholder = "Search"
-        searchBar.delegate = self
-        searchBar.sizeToFit()
-        
-        self.tableView.tableHeaderView = searchBar
     }
     
     // MARK: 请求列表数据
     func doAllRequest(){
         
-        AFAppDotNetAPIClient.shareAFAppDotNetAPIClient().getRequest(url: "posts/all", paramters: nil, block: {(json: Any?, error: Error?) -> Void in
-        
+        AFAppDotNetAPIClient.shareAFAppDotNetAPIClient().getRequest(url: "posts/recent", paramters: nil, block: {(json: Any?, error: Error?) -> Void in
+            
             if AFAppDotNetAPIClient.shareAFAppDotNetAPIClient().httpError(error: error) {
                 self.showAlert(text: error?.localizedDescription)
                 
@@ -81,12 +58,11 @@ class AllMainTableViewController: BaseTableViewController, UISearchBarDelegate, 
             let jsonData = try?JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions(rawValue: UInt(0)))
             
             if let jsonArr: Array = jsonData as? Array<Dictionary<String, String>> {
-                self.allDatas = jsonArr
-                self.datas = self.allDatas
+                self.datas = jsonArr
                 
                 self.tableView.reloadData()
             }
-        
+            
         })
     }
     
@@ -108,56 +84,6 @@ class AllMainTableViewController: BaseTableViewController, UISearchBarDelegate, 
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    // MARK: UISearchBarDelegate
-    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-        searchDatas.removeAll()
-        datas = allDatas
-        self.tableView.reloadData()
-    }
-    
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        let searchText = searchBar.text!
-        
-        var isResult = false
-        
-        for dic in allDatas{
-            
-            if let description: String = dic["description"]{
-                if description.contains(searchText){
-                    isResult = true
-                }
-            }
-            
-            if let extended: String = dic["extended"]{
-                if extended.contains(searchText){
-                    isResult = true
-                }
-            }
-            
-            if let tags: String = dic["tags"]{
-                if tags.contains(searchText){
-                    isResult = true
-                }
-            }
-            
-            if let href: String = dic["href"]{
-                if href.contains(searchText){
-                    isResult = true
-                }
-            }
-            
-            if isResult{
-                searchDatas.append(dic)
-                datas = searchDatas
-                self.tableView.reloadData()
-            }
-        }
-    }
-    
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        searchBar.resignFirstResponder()
-    }
 
     // MARK: - Table view data source
 
@@ -168,14 +94,13 @@ class AllMainTableViewController: BaseTableViewController, UISearchBarDelegate, 
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return self.datas.count
+        return datas.count
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentily, for: indexPath) as! AllMainTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: recentIdentity, for: indexPath) as! AllMainTableViewCell
         cell.allMainCellDelegate = self
-
+        
         let dic = self.datas[indexPath.row]
         
         if let description: String = dic["description"]{
@@ -192,7 +117,7 @@ class AllMainTableViewController: BaseTableViewController, UISearchBarDelegate, 
             
             cell.collectionViewDataSourceDelegate(tags: arrTags)
         }
-
+        
         return cell
     }
     
@@ -243,7 +168,6 @@ class AllMainTableViewController: BaseTableViewController, UISearchBarDelegate, 
         return [deleteAction, shareAction]
     }
     
-    
     // MARK: AllMainTableViewCellDelegate
     
     func didSelectTag(tag: String!) {
@@ -251,11 +175,7 @@ class AllMainTableViewController: BaseTableViewController, UISearchBarDelegate, 
         Constant.SelectTag = true
         Constant.SelectTagName = tag
     }
-    
-//    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return 80
-//    }
-
+ 
 
     /*
     // Override to support conditional editing of the table view.

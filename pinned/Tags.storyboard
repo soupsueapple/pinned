@@ -49,6 +49,7 @@
                                 <connections>
                                     <outlet property="number_lb" destination="M20-5T-ch5" id="PrT-Qi-ATg"/>
                                     <outlet property="tag_lb" destination="t2z-5S-86Y" id="Ebl-8t-Doi"/>
+                                    <segue destination="KM3-AV-Ib4" kind="push" identifier="TagsSegue" id="UyC-kN-asy"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -93,12 +94,14 @@
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailingMargin" secondItem="6RK-9O-muM" secondAttribute="trailing" id="49x-mh-jwv"/>
-                                        <constraint firstItem="6RK-9O-muM" firstAttribute="top" secondItem="CvX-TZ-iMh" secondAttribute="topMargin" id="CS7-no-ULd"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="7rn-Tj-aVe" secondAttribute="bottom" constant="9" id="GdC-OI-C2G"/>
-                                        <constraint firstItem="7rn-Tj-aVe" firstAttribute="leading" secondItem="CvX-TZ-iMh" secondAttribute="leadingMargin" id="IsK-JR-If5"/>
-                                        <constraint firstItem="6RK-9O-muM" firstAttribute="leading" secondItem="CvX-TZ-iMh" secondAttribute="leadingMargin" id="PZH-PL-guy"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="7rn-Tj-aVe" secondAttribute="trailing" id="fLG-RS-rzQ"/>
+                                        <constraint firstItem="7rn-Tj-aVe" firstAttribute="trailing" secondItem="CvX-TZ-iMh" secondAttribute="trailingMargin" id="2sp-W7-Sou"/>
+                                        <constraint firstItem="7rn-Tj-aVe" firstAttribute="top" secondItem="6RK-9O-muM" secondAttribute="bottom" constant="15" id="4iJ-yF-cJ8"/>
+                                        <constraint firstItem="7rn-Tj-aVe" firstAttribute="leading" secondItem="CvX-TZ-iMh" secondAttribute="leadingMargin" id="7h3-4F-KIq"/>
+                                        <constraint firstItem="6RK-9O-muM" firstAttribute="top" secondItem="CvX-TZ-iMh" secondAttribute="topMargin" id="HJ0-U9-oCc"/>
+                                        <constraint firstItem="6RK-9O-muM" firstAttribute="trailing" secondItem="CvX-TZ-iMh" secondAttribute="trailingMargin" id="P8W-h2-2fc"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="7rn-Tj-aVe" secondAttribute="bottom" constant="9" id="UEj-ip-Ahh"/>
+                                        <constraint firstItem="6RK-9O-muM" firstAttribute="leading" secondItem="CvX-TZ-iMh" secondAttribute="leadingMargin" id="XQu-dT-tOa"/>
+                                        <constraint firstItem="7rn-Tj-aVe" firstAttribute="top" secondItem="6RK-9O-muM" secondAttribute="bottom" constant="15" id="o2G-1b-4p8"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -116,7 +119,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BbQ-0S-WMU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2696.8000000000002" y="366.56671664167919"/>
+            <point key="canvasLocation" x="1898" y="367"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="S53-IN-3T5">
@@ -135,24 +138,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gq9-84-f1V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="244" y="367.46626686656674"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="rrl-X1-cmK">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8eE-yo-DdU" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="JNs-qO-UrW">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="KM3-AV-Ib4" kind="relationship" relationship="rootViewController" id="nXq-xl-SKp"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bna-fY-KgF" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1757.5999999999999" y="366.56671664167919"/>
         </scene>
     </scenes>
 </document>

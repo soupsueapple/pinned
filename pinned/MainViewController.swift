@@ -27,7 +27,7 @@ class MainViewController: UITabBarController {
         
         allNavigationViewController.tabBarItem = UITabBarItem(title: "All", image: nil, tag: 0)
         tagesNavigationViewController.tabBarItem = UITabBarItem(title: "Tags", image: nil, tag: 0)
-        markNavigationViewController.tabBarItem = UITabBarItem(title: "Mark", image: nil, tag: 0)
+        markNavigationViewController.tabBarItem = UITabBarItem(title: "Recent", image: nil, tag: 0)
         otherNavigationViewController.tabBarItem = UITabBarItem(title: "Other", image: nil, tag: 0)
         
         self.viewControllers = [allNavigationViewController, tagesNavigationViewController, markNavigationViewController, otherNavigationViewController]
