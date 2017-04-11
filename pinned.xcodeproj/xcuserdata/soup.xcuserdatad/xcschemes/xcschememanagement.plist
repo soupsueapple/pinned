@@ -4,6 +4,16 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>HttpKIt.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>NetworkingKit.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>8</integer>
+		</dict>
 		<key>pinned.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -12,7 +22,7 @@
 		<key>pinnedShareExtension.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>4</integer>
+			<integer>1</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
@@ -23,6 +33,26 @@
 			<true/>
 		</dict>
 		<key>046D41DB1E9CC15700624E77</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>046D41EF1E9CC5B600624E77</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>046D41F71E9CC5B600624E77</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>046D42231E9CD2BF00624E77</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>046D422B1E9CD2C200624E77</key>
 		<dict>
 			<key>primary</key>
 			<true/>

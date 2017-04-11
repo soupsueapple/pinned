@@ -28,6 +28,26 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "046D41F71E9CC5B600624E77"
+               BuildableName = "HttpKItTests.xctest"
+               BlueprintName = "HttpKItTests"
+               ReferencedContainer = "container:pinned.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "046D422B1E9CD2C200624E77"
+               BuildableName = "NetworkingKitTests.xctest"
+               BlueprintName = "NetworkingKitTests"
+               ReferencedContainer = "container:pinned.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

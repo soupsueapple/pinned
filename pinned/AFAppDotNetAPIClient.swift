@@ -9,14 +9,14 @@
 import UIKit
 import AFNetworking
 
-class AFAppDotNetAPIClient: AFHTTPSessionManager {
+public class AFAppDotNetAPIClient: AFHTTPSessionManager {
     
     private static let baseURL: String = "https://api.pinboard.in/v1/"
     
     private static let instance: AFAppDotNetAPIClient = AFAppDotNetAPIClient(baseURL: URL(string: baseURL))
     
     
-    class func shareAFAppDotNetAPIClient() -> AFAppDotNetAPIClient {
+    public class func shareAFAppDotNetAPIClient() -> AFAppDotNetAPIClient {
         instance.securityPolicy = AFSecurityPolicy.init(pinningMode: .none)
         instance.responseSerializer = AFHTTPResponseSerializer()
         instance.responseSerializer.acceptableContentTypes = ["text/html", "text/plain", "text/xml","application/json", "text/json", "text/javascript"]
@@ -33,7 +33,7 @@ class AFAppDotNetAPIClient: AFHTTPSessionManager {
         return false
     }
    
-    func getRequest(url: String!, paramters: Dictionary<String, String>!, block: @escaping (_ responseObject: Any?, _ error: Error?) -> Void){
+    public func getRequest(url: String!, paramters: Dictionary<String, String>!, block: @escaping (_ responseObject: Any?, _ error: Error?) -> Void){
         
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         
@@ -60,7 +60,7 @@ class AFAppDotNetAPIClient: AFHTTPSessionManager {
         })
     }
     
-    func postRequest(url: String!, paramters: Dictionary<String, String>!, block: @escaping (_ responseObject: Any?, _ error: Error?) -> Void){
+    public func postRequest(url: String!, paramters: Dictionary<String, String>!, block: @escaping (_ responseObject: Any?, _ error: Error?) -> Void){
         
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         
@@ -78,7 +78,7 @@ class AFAppDotNetAPIClient: AFHTTPSessionManager {
         })
     }
     
-    func loginRequest(username: String!, password: String!){
+    public func loginRequest(username: String!, password: String!){
         
         
         self.requestSerializer.setAuthorizationHeaderFieldWithUsername(username, password: password)

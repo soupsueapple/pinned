@@ -22,4 +22,16 @@ class CacheData{
         return any as Any
     }
     
+    
+    static func saveCacheExtension(key: String, value: Any){
+        let setting = UserDefaults(suiteName: "group.SoupMain")
+        setting?.set(value, forKey: key)
+        setting?.synchronize()
+    }
+    
+    static func cacheExtension(key: String) -> Any{
+        let setting = UserDefaults(suiteName: "group.SoupMain")
+        let any = setting?.object(forKey: key)
+        return any as Any
+    }
 }
