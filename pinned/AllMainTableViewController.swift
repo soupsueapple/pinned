@@ -57,7 +57,6 @@ class AllMainTableViewController: BaseTableViewController, UISearchBarDelegate, 
         self.tableView.mj_header.beginRefreshing()
         
         searchBar = UISearchBar(frame: CGRect.zero)
-        searchBar.showsCancelButton = true
         searchBar.placeholder = "Search"
         searchBar.delegate = self
         searchBar.sizeToFit()
@@ -117,6 +116,9 @@ class AllMainTableViewController: BaseTableViewController, UISearchBarDelegate, 
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+        searchBar.showsCancelButton = true
+
         let searchText = searchBar.text!
         
         var isResult = false
@@ -157,6 +159,7 @@ class AllMainTableViewController: BaseTableViewController, UISearchBarDelegate, 
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
+        searchBar.showsCancelButton = false
     }
 
     // MARK: - Table view data source
