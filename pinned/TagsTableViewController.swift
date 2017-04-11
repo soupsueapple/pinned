@@ -98,7 +98,6 @@ class TagsTableViewController: BaseTableViewController {
                 
                 return
             }
-            
         })
     }
     
@@ -111,6 +110,23 @@ class TagsTableViewController: BaseTableViewController {
                 self.showAlert(text: error?.localizedDescription)
                 
                 return
+            }
+            
+            let data = json as! Data
+            
+            let jsonData = try?JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions(rawValue: UInt(0)))
+            
+            if let jsonDic: Dictionary = jsonData as? Dictionary<String, String> {
+                let datas = jsonDic
+                
+                if let result = datas["result"]{
+                    if result == "done" {
+                        self.tableView.mj_header.beginRefreshing()
+                    }else {
+                        self.showAlert(text: result)
+                    }
+                }
+                
             }
             
         })

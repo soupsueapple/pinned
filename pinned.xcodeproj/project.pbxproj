@@ -22,6 +22,10 @@
 		046D41CF1E9B7B5300624E77 /* TagInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046D41CE1E9B7B5300624E77 /* TagInfoTableViewCell.swift */; };
 		046D41D21E9C751100624E77 /* RecentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046D41D11E9C751100624E77 /* RecentTableViewController.swift */; };
 		046D41D51E9C81E900624E77 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046D41D41E9C81E900624E77 /* Constant.swift */; };
+		046D41D71E9CA82A00624E77 /* AddURLViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046D41D61E9CA82A00624E77 /* AddURLViewController.swift */; };
+		046D41DF1E9CC15800624E77 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046D41DE1E9CC15800624E77 /* ShareViewController.swift */; };
+		046D41E21E9CC15800624E77 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 046D41E01E9CC15800624E77 /* MainInterface.storyboard */; };
+		046D41E61E9CC15800624E77 /* pinnedShareExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 046D41DC1E9CC15700624E77 /* pinnedShareExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		0474860B1E94D78A004093D3 /* All.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0474860A1E94D78A004093D3 /* All.storyboard */; };
 		0474860D1E94D82B004093D3 /* Tags.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0474860C1E94D82B004093D3 /* Tags.storyboard */; };
 		0474860F1E94DB40004093D3 /* Mark.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0474860E1E94DB40004093D3 /* Mark.storyboard */; };
@@ -40,6 +44,30 @@
 		04EECA671E8E3FA300A81CEE /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EECA661E8E3FA300A81CEE /* StringExtension.swift */; };
 		81C82F4E300BD2CDF2C5C4A8 /* Pods_pinned.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F002523DD10301F8AE2CFDDB /* Pods_pinned.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		046D41E41E9CC15800624E77 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 043204521E8CDED2002706B8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 046D41DB1E9CC15700624E77;
+			remoteInfo = pinnedShareExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		046D41EA1E9CC15800624E77 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				046D41E61E9CC15800624E77 /* pinnedShareExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0432045A1E8CDED3002706B8 /* pinned.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pinned.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -61,6 +89,11 @@
 		046D41CE1E9B7B5300624E77 /* TagInfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagInfoTableViewCell.swift; sourceTree = "<group>"; };
 		046D41D11E9C751100624E77 /* RecentTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentTableViewController.swift; sourceTree = "<group>"; };
 		046D41D41E9C81E900624E77 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		046D41D61E9CA82A00624E77 /* AddURLViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddURLViewController.swift; sourceTree = "<group>"; };
+		046D41DC1E9CC15700624E77 /* pinnedShareExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = pinnedShareExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		046D41DE1E9CC15800624E77 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
+		046D41E11E9CC15800624E77 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		046D41E31E9CC15800624E77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0474860A1E94D78A004093D3 /* All.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = All.storyboard; sourceTree = "<group>"; };
 		0474860C1E94D82B004093D3 /* Tags.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Tags.storyboard; sourceTree = "<group>"; };
 		0474860E1E94DB40004093D3 /* Mark.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Mark.storyboard; sourceTree = "<group>"; };
@@ -91,6 +124,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		046D41D91E9CC15700624E77 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -98,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				0432045C1E8CDED3002706B8 /* pinned */,
+				046D41DD1E9CC15800624E77 /* pinnedShareExtension */,
 				0432045B1E8CDED3002706B8 /* Products */,
 				6CE03DB27D84ADA46E2DCC2B /* Pods */,
 				92F28B42EFC7E5E2D2DBF24F /* Frameworks */,
@@ -108,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				0432045A1E8CDED3002706B8 /* pinned.app */,
+				046D41DC1E9CC15700624E77 /* pinnedShareExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -177,6 +219,16 @@
 			name = Constant;
 			sourceTree = "<group>";
 		};
+		046D41DD1E9CC15800624E77 /* pinnedShareExtension */ = {
+			isa = PBXGroup;
+			children = (
+				046D41DE1E9CC15800624E77 /* ShareViewController.swift */,
+				046D41E01E9CC15800624E77 /* MainInterface.storyboard */,
+				046D41E31E9CC15800624E77 /* Info.plist */,
+			);
+			path = pinnedShareExtension;
+			sourceTree = "<group>";
+		};
 		047486161E94E0F6004093D3 /* All */ = {
 			isa = PBXGroup;
 			children = (
@@ -186,6 +238,7 @@
 				04BF109C1E9767D700FEC2C8 /* AllMainNewCollectionViewCell.xib */,
 				04BF10971E963A3E00FEC2C8 /* AllMainCollectionViewCell.swift */,
 				04BF10991E97242200FEC2C8 /* AllMainUICollectionView.swift */,
+				046D41D61E9CA82A00624E77 /* AddURLViewController.swift */,
 			);
 			name = All;
 			sourceTree = "<group>";
@@ -263,15 +316,34 @@
 				043204581E8CDED2002706B8 /* Resources */,
 				A8F941D4DC4BD0930E9771BF /* [CP] Embed Pods Frameworks */,
 				C435CD6B47DBEEC47C43AB4F /* [CP] Copy Pods Resources */,
+				046D41EA1E9CC15800624E77 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				046D41E51E9CC15800624E77 /* PBXTargetDependency */,
 			);
 			name = pinned;
 			productName = pinned;
 			productReference = 0432045A1E8CDED3002706B8 /* pinned.app */;
 			productType = "com.apple.product-type.application";
+		};
+		046D41DB1E9CC15700624E77 /* pinnedShareExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 046D41E71E9CC15800624E77 /* Build configuration list for PBXNativeTarget "pinnedShareExtension" */;
+			buildPhases = (
+				046D41D81E9CC15700624E77 /* Sources */,
+				046D41D91E9CC15700624E77 /* Frameworks */,
+				046D41DA1E9CC15700624E77 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = pinnedShareExtension;
+			productName = pinnedShareExtension;
+			productReference = 046D41DC1E9CC15700624E77 /* pinnedShareExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -279,12 +351,17 @@
 		043204521E8CDED2002706B8 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0820;
+				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Kun Soup";
 				TargetAttributes = {
 					043204591E8CDED2002706B8 = {
 						CreatedOnToolsVersion = 8.2;
+						DevelopmentTeam = 56ZD4J8FQ5;
+						ProvisioningStyle = Automatic;
+					};
+					046D41DB1E9CC15700624E77 = {
+						CreatedOnToolsVersion = 8.3.1;
 						DevelopmentTeam = 56ZD4J8FQ5;
 						ProvisioningStyle = Automatic;
 					};
@@ -304,6 +381,7 @@
 			projectRoot = "";
 			targets = (
 				043204591E8CDED2002706B8 /* pinned */,
+				046D41DB1E9CC15700624E77 /* pinnedShareExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -323,6 +401,14 @@
 				04EECA5C1E8E24EA00A81CEE /* Login.storyboard in Resources */,
 				0474860B1E94D78A004093D3 /* All.storyboard in Resources */,
 				043204631E8CDED3002706B8 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		046D41DA1E9CC15700624E77 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				046D41E21E9CC15800624E77 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,6 +471,7 @@
 				043204751E8CF3F6002706B8 /* OnePasswordExtension.m in Sources */,
 				04EECA601E8E2D2C00A81CEE /* AFAppDotNetAPIClient.swift in Sources */,
 				043204601E8CDED3002706B8 /* ViewController.swift in Sources */,
+				046D41D71E9CA82A00624E77 /* AddURLViewController.swift in Sources */,
 				04BF10981E963A3E00FEC2C8 /* AllMainCollectionViewCell.swift in Sources */,
 				04BF109A1E97242200FEC2C8 /* AllMainUICollectionView.swift in Sources */,
 				046D41D21E9C751100624E77 /* RecentTableViewController.swift in Sources */,
@@ -405,7 +492,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		046D41D81E9CC15700624E77 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				046D41DF1E9CC15800624E77 /* ShareViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		046D41E51E9CC15800624E77 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 046D41DB1E9CC15700624E77 /* pinnedShareExtension */;
+			targetProxy = 046D41E41E9CC15800624E77 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		043204611E8CDED3002706B8 /* Main.storyboard */ = {
@@ -422,6 +525,14 @@
 				043204671E8CDED3002706B8 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		046D41E01E9CC15800624E77 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				046D41E11E9CC15800624E77 /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -524,6 +635,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3E8B02F8495A9877F7FA02F6 /* Pods-pinned.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 56ZD4J8FQ5;
 				INFOPLIST_FILE = pinned/Info.plist;
@@ -540,6 +652,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 79DA0FE1A4CAF0288DE49170 /* Pods-pinned.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 56ZD4J8FQ5;
 				INFOPLIST_FILE = pinned/Info.plist;
@@ -548,6 +661,36 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.soup.pinned;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = pinned/OCHeader.h;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		046D41E81E9CC15800624E77 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				DEVELOPMENT_TEAM = 56ZD4J8FQ5;
+				INFOPLIST_FILE = pinnedShareExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.soup.pinned.pinnedShareExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		046D41E91E9CC15800624E77 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				DEVELOPMENT_TEAM = 56ZD4J8FQ5;
+				INFOPLIST_FILE = pinnedShareExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.soup.pinned.pinnedShareExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -572,6 +715,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		046D41E71E9CC15800624E77 /* Build configuration list for PBXNativeTarget "pinnedShareExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				046D41E81E9CC15800624E77 /* Debug */,
+				046D41E91E9CC15800624E77 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

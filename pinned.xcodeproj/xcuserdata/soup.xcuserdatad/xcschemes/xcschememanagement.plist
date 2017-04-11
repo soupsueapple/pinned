@@ -9,10 +9,20 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>pinnedShareExtension.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>043204591E8CDED2002706B8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>046D41DB1E9CC15700624E77</key>
 		<dict>
 			<key>primary</key>
 			<true/>
