@@ -26,13 +26,6 @@
 		046D41DF1E9CC15800624E77 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046D41DE1E9CC15800624E77 /* ShareViewController.swift */; };
 		046D41E21E9CC15800624E77 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 046D41E01E9CC15800624E77 /* MainInterface.storyboard */; };
 		046D41E61E9CC15800624E77 /* pinnedShareExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 046D41DC1E9CC15700624E77 /* pinnedShareExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		046D41F91E9CC5B600624E77 /* HttpKIt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 046D41F01E9CC5B600624E77 /* HttpKIt.framework */; };
-		046D42001E9CC5B600624E77 /* HttpKItTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046D41FF1E9CC5B600624E77 /* HttpKItTests.swift */; };
-		046D42021E9CC5B600624E77 /* HttpKIt.h in Headers */ = {isa = PBXBuildFile; fileRef = 046D41F21E9CC5B600624E77 /* HttpKIt.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		046D42051E9CC5B600624E77 /* HttpKIt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 046D41F01E9CC5B600624E77 /* HttpKIt.framework */; };
-		046D42061E9CC5B600624E77 /* HttpKIt.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 046D41F01E9CC5B600624E77 /* HttpKIt.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		046D420E1E9CC5F200624E77 /* HttpKIt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 046D41F01E9CC5B600624E77 /* HttpKIt.framework */; };
-		046D42171E9CCA8B00624E77 /* CacheData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043204771E8DEA77002706B8 /* CacheData.swift */; };
 		046D422D1E9CD2C400624E77 /* NetworkingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 046D42241E9CD2C000624E77 /* NetworkingKit.framework */; };
 		046D42341E9CD2C400624E77 /* NetworkingKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046D42331E9CD2C400624E77 /* NetworkingKitTests.swift */; };
 		046D42361E9CD2C400624E77 /* NetworkingKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 046D42261E9CD2C200624E77 /* NetworkingKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -68,27 +61,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 046D41DB1E9CC15700624E77;
 			remoteInfo = pinnedShareExtension;
-		};
-		046D41FA1E9CC5B600624E77 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 043204521E8CDED2002706B8 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 046D41EF1E9CC5B600624E77;
-			remoteInfo = HttpKIt;
-		};
-		046D41FC1E9CC5B600624E77 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 043204521E8CDED2002706B8 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 043204591E8CDED2002706B8;
-			remoteInfo = pinned;
-		};
-		046D42031E9CC5B600624E77 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 043204521E8CDED2002706B8 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 046D41EF1E9CC5B600624E77;
-			remoteInfo = HttpKIt;
 		};
 		046D422E1E9CD2C400624E77 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -131,7 +103,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				046D42061E9CC5B600624E77 /* HttpKIt.framework in Embed Frameworks */,
 				046D423A1E9CD2C400624E77 /* NetworkingKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -164,12 +135,6 @@
 		046D41DE1E9CC15800624E77 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		046D41E11E9CC15800624E77 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		046D41E31E9CC15800624E77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		046D41F01E9CC5B600624E77 /* HttpKIt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HttpKIt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		046D41F21E9CC5B600624E77 /* HttpKIt.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HttpKIt.h; sourceTree = "<group>"; };
-		046D41F31E9CC5B600624E77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		046D41F81E9CC5B600624E77 /* HttpKItTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HttpKItTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		046D41FF1E9CC5B600624E77 /* HttpKItTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpKItTests.swift; sourceTree = "<group>"; };
-		046D42011E9CC5B600624E77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		046D42131E9CC89400624E77 /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AFNetworking.framework; path = "../../../Library/Developer/Xcode/DerivedData/pinned-bjpvpqfztwgkgrbekxevfhndkkxg/Build/Products/Debug-iphonesimulator/AFNetworking/AFNetworking.framework"; sourceTree = "<group>"; };
 		046D42161E9CC9CE00624E77 /* pinned.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = pinned.entitlements; sourceTree = "<group>"; };
 		046D42241E9CD2C000624E77 /* NetworkingKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NetworkingKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -213,7 +178,6 @@
 			files = (
 				81C82F4E300BD2CDF2C5C4A8 /* Pods_pinned.framework in Frameworks */,
 				046D42391E9CD2C400624E77 /* NetworkingKit.framework in Frameworks */,
-				046D42051E9CC5B600624E77 /* HttpKIt.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -222,23 +186,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				046D42411E9CD2EE00624E77 /* NetworkingKit.framework in Frameworks */,
-				046D420E1E9CC5F200624E77 /* HttpKIt.framework in Frameworks */,
 				21581CF1FE5F98554948B7A1 /* Pods_pinnedShareExtension.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		046D41EC1E9CC5B600624E77 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		046D41F51E9CC5B600624E77 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				046D41F91E9CC5B600624E77 /* HttpKIt.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,8 +214,6 @@
 			children = (
 				0432045C1E8CDED3002706B8 /* pinned */,
 				046D41DD1E9CC15800624E77 /* pinnedShareExtension */,
-				046D41F11E9CC5B600624E77 /* HttpKIt */,
-				046D41FE1E9CC5B600624E77 /* HttpKItTests */,
 				046D42251E9CD2C200624E77 /* NetworkingKit */,
 				046D42321E9CD2C400624E77 /* NetworkingKitTests */,
 				0432045B1E8CDED3002706B8 /* Products */,
@@ -281,8 +227,6 @@
 			children = (
 				0432045A1E8CDED3002706B8 /* pinned.app */,
 				046D41DC1E9CC15700624E77 /* pinnedShareExtension.appex */,
-				046D41F01E9CC5B600624E77 /* HttpKIt.framework */,
-				046D41F81E9CC5B600624E77 /* HttpKItTests.xctest */,
 				046D42241E9CD2C000624E77 /* NetworkingKit.framework */,
 				046D422C1E9CD2C200624E77 /* NetworkingKitTests.xctest */,
 			);
@@ -363,24 +307,6 @@
 				046D41E31E9CC15800624E77 /* Info.plist */,
 			);
 			path = pinnedShareExtension;
-			sourceTree = "<group>";
-		};
-		046D41F11E9CC5B600624E77 /* HttpKIt */ = {
-			isa = PBXGroup;
-			children = (
-				046D41F21E9CC5B600624E77 /* HttpKIt.h */,
-				046D41F31E9CC5B600624E77 /* Info.plist */,
-			);
-			path = HttpKIt;
-			sourceTree = "<group>";
-		};
-		046D41FE1E9CC5B600624E77 /* HttpKItTests */ = {
-			isa = PBXGroup;
-			children = (
-				046D41FF1E9CC5B600624E77 /* HttpKItTests.swift */,
-				046D42011E9CC5B600624E77 /* Info.plist */,
-			);
-			path = HttpKItTests;
 			sourceTree = "<group>";
 		};
 		046D42251E9CD2C200624E77 /* NetworkingKit */ = {
@@ -486,14 +412,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		046D41ED1E9CC5B600624E77 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				046D42021E9CC5B600624E77 /* HttpKIt.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		046D42211E9CD2BF00624E77 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -522,7 +440,6 @@
 			);
 			dependencies = (
 				046D41E51E9CC15800624E77 /* PBXTargetDependency */,
-				046D42041E9CC5B600624E77 /* PBXTargetDependency */,
 				046D42381E9CD2C400624E77 /* PBXTargetDependency */,
 			);
 			name = pinned;
@@ -548,43 +465,6 @@
 			productName = pinnedShareExtension;
 			productReference = 046D41DC1E9CC15700624E77 /* pinnedShareExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
-		};
-		046D41EF1E9CC5B600624E77 /* HttpKIt */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 046D42071E9CC5B900624E77 /* Build configuration list for PBXNativeTarget "HttpKIt" */;
-			buildPhases = (
-				046D41EB1E9CC5B600624E77 /* Sources */,
-				046D41EC1E9CC5B600624E77 /* Frameworks */,
-				046D41ED1E9CC5B600624E77 /* Headers */,
-				046D41EE1E9CC5B600624E77 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = HttpKIt;
-			productName = HttpKIt;
-			productReference = 046D41F01E9CC5B600624E77 /* HttpKIt.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		046D41F71E9CC5B600624E77 /* HttpKItTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 046D420B1E9CC5B900624E77 /* Build configuration list for PBXNativeTarget "HttpKItTests" */;
-			buildPhases = (
-				046D41F41E9CC5B600624E77 /* Sources */,
-				046D41F51E9CC5B600624E77 /* Frameworks */,
-				046D41F61E9CC5B600624E77 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				046D41FB1E9CC5B600624E77 /* PBXTargetDependency */,
-				046D41FD1E9CC5B600624E77 /* PBXTargetDependency */,
-			);
-			name = HttpKItTests;
-			productName = HttpKItTests;
-			productReference = 046D41F81E9CC5B600624E77 /* HttpKItTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		046D42231E9CD2BF00624E77 /* NetworkingKit */ = {
 			isa = PBXNativeTarget;
@@ -650,17 +530,6 @@
 						DevelopmentTeam = 56ZD4J8FQ5;
 						ProvisioningStyle = Automatic;
 					};
-					046D41EF1E9CC5B600624E77 = {
-						CreatedOnToolsVersion = 8.3.1;
-						DevelopmentTeam = 56ZD4J8FQ5;
-						LastSwiftMigration = 0830;
-						ProvisioningStyle = Automatic;
-					};
-					046D41F71E9CC5B600624E77 = {
-						CreatedOnToolsVersion = 8.3.1;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 043204591E8CDED2002706B8;
-					};
 					046D42231E9CD2BF00624E77 = {
 						CreatedOnToolsVersion = 8.3.1;
 						DevelopmentTeam = 56ZD4J8FQ5;
@@ -688,8 +557,6 @@
 			targets = (
 				043204591E8CDED2002706B8 /* pinned */,
 				046D41DB1E9CC15700624E77 /* pinnedShareExtension */,
-				046D41EF1E9CC5B600624E77 /* HttpKIt */,
-				046D41F71E9CC5B600624E77 /* HttpKItTests */,
 				046D42231E9CD2BF00624E77 /* NetworkingKit */,
 				046D422B1E9CD2C200624E77 /* NetworkingKitTests */,
 			);
@@ -719,20 +586,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				046D41E21E9CC15800624E77 /* MainInterface.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		046D41EE1E9CC5B600624E77 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		046D41F61E9CC5B600624E77 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -898,22 +751,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		046D41EB1E9CC5B600624E77 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				046D42171E9CCA8B00624E77 /* CacheData.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		046D41F41E9CC5B600624E77 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				046D42001E9CC5B600624E77 /* HttpKItTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		046D421F1E9CD2BF00624E77 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -937,21 +774,6 @@
 			isa = PBXTargetDependency;
 			target = 046D41DB1E9CC15700624E77 /* pinnedShareExtension */;
 			targetProxy = 046D41E41E9CC15800624E77 /* PBXContainerItemProxy */;
-		};
-		046D41FB1E9CC5B600624E77 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 046D41EF1E9CC5B600624E77 /* HttpKIt */;
-			targetProxy = 046D41FA1E9CC5B600624E77 /* PBXContainerItemProxy */;
-		};
-		046D41FD1E9CC5B600624E77 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 043204591E8CDED2002706B8 /* pinned */;
-			targetProxy = 046D41FC1E9CC5B600624E77 /* PBXContainerItemProxy */;
-		};
-		046D42041E9CC5B600624E77 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 046D41EF1E9CC5B600624E77 /* HttpKIt */;
-			targetProxy = 046D42031E9CC5B600624E77 /* PBXContainerItemProxy */;
 		};
 		046D422F1E9CD2C400624E77 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1159,87 +981,6 @@
 			};
 			name = Release;
 		};
-		046D42081E9CC5B900624E77 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 56ZD4J8FQ5;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = HttpKIt/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.soup.HttpKIt;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		046D42091E9CC5B900624E77 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 56ZD4J8FQ5;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = HttpKIt/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.soup.HttpKIt;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		046D420C1E9CC5B900624E77 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				INFOPLIST_FILE = HttpKItTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.soup.HttpKItTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/pinned.app/pinned";
-			};
-			name = Debug;
-		};
-		046D420D1E9CC5B900624E77 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				INFOPLIST_FILE = HttpKItTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.soup.HttpKItTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/pinned.app/pinned";
-			};
-			name = Release;
-		};
 		046D423C1E9CD2C400624E77 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2530FBCE2C238983B8505523 /* Pods-NetworkingKit.debug.xcconfig */;
@@ -1346,24 +1087,6 @@
 			buildConfigurations = (
 				046D41E81E9CC15800624E77 /* Debug */,
 				046D41E91E9CC15800624E77 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		046D42071E9CC5B900624E77 /* Build configuration list for PBXNativeTarget "HttpKIt" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				046D42081E9CC5B900624E77 /* Debug */,
-				046D42091E9CC5B900624E77 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		046D420B1E9CC5B900624E77 /* Build configuration list for PBXNativeTarget "HttpKItTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				046D420C1E9CC5B900624E77 /* Debug */,
-				046D420D1E9CC5B900624E77 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
